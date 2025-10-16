@@ -1,0 +1,22 @@
+// === Base colors ===
+$color-black: #000000;
+$color-dark: #121212;
+$color-white: #ffffff;
+$color-gray: #b3b3b3;
+$color-pink: #ff38b6;
+$color-disabled: #848484;
+
+// === Backgrounds ===
+$background-primary: $color-black;
+$background-secondary: $color-dark;
+$background-modal: #141414;
+
+// === Gradients ===
+$gradient-primary: linear-gradient(180deg, #3333a3 0%, $color-dark 100%);
+$gradient-gold: linear-gradient(180deg, #adbf22 0%, $color-dark 100%);
+$gradient-gold-deep: linear-gradient(180deg, #b8a661 0%, #72673d 50%, $color-dark 100%);
+$gradient-red: linear-gradient(180deg, #9a3426 0%, $color-dark 100%);
+
+// === Text ===
+$text-color-primary: $color-white;
+$text-color-secondary: $color-gray;

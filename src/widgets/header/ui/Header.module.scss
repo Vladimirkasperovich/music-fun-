@@ -1,0 +1,21 @@
+@use '@/app/styles/variables' as vars;
+
+.container {
+    width: 100%;
+    height: 80px;
+    padding: 15px 32px;
+    background-color: vars.$background-primary;
+    display: flex;
+    flex-direction: row-reverse;
+    cursor: pointer;
+    outline: none;
+
+    .authButton {
+        width: 234px;
+        height: 50px;
+        background-color: vars.$color-pink;
+        border-radius: 45px;
+        font-weight: 800;
+        font-size: 16px;
+    }
+}

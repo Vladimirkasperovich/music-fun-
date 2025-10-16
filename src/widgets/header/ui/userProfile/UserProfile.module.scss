@@ -1,0 +1,18 @@
+.container {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    position: relative;
+
+    .image {
+        width: 34px;
+        height: 34px;
+    }
+
+    .username {
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 100%;
+        letter-spacing: 1px;
+    }
+}

@@ -1,0 +1,37 @@
+@use '@/app/styles/variables' as vars;
+
+.container {
+    .arrow {
+        width: 16px;
+        height: 16px;
+    }
+
+    .list {
+        width: 136px;
+        height: 120px;
+        padding: 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        position: absolute;
+        right: 5px;
+        top: 45px;
+        background-color: vars.$color-black;
+        border: 1px solid white;
+
+        .item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .icon {
+            width: 18px;
+            height: 18px;
+        }
+        .title {
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 28px;
+        }
+    }
+}

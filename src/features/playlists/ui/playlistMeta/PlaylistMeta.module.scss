@@ -1,0 +1,37 @@
+@use '@/app/styles/variables' as vars;
+
+.title {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 24px;
+    margin-bottom: 4px;
+}
+
+.madeFor {
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 100%;
+    color: vars.$color-gray;
+    margin-bottom: 4px;
+
+    .username {
+        color: vars.$color-white;
+        text-decoration: underline;
+    }
+}
+
+.createdAt {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 100%;
+    color: vars.$color-gray;
+    margin-bottom: 4px;
+
+    .icon {
+        width: 4px;
+        height: 4px;
+    }
+}

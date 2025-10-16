@@ -1,0 +1,77 @@
+/* ===== CSS Reset ===== */
+
+/* 1. Устанавливаем box-sizing для всех элементов */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2. Убираем отступы по умолчанию */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* 3. Устанавливаем базовые настройки шрифта и фона */
+html,
+body {
+  height: 100%;
+  font-size: 16px;
+  line-height: 1.5;
+  font-family: sans-serif;
+  background-color: #fff;
+  color: #000;
+}
+
+/* 4. Убираем подчеркивание у ссылок */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* 5. Убираем маркеры у списков */
+ul,
+ol {
+  list-style: none;
+}
+
+/* 6. Обнуляем стили заголовков */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+/* 7. Изображения не выходят за границы контейнера */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* 8. Убираем стили кнопок и форм */
+button,
+input,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  outline: none;
+}
+
+/* 9. Кнопки кликабельны */
+button {
+  cursor: pointer;
+}
+
+/* 10. Таблицы */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
