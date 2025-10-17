@@ -1,14 +1,14 @@
-import type { FC } from 'react';
+import { type FC, memo } from 'react';
 import type { PlaylistAttributes } from '@/features/playlists/types/playlists.types.ts';
 import { PlaylistCover } from '@/features/playlists/ui/playlistCover/PlaylistCover.tsx';
 import { PlaylistMeta } from '@/features/playlists/ui/playlistMeta/PlaylistMeta.tsx';
 import { PlaylistReaction } from '@/features/playlists/ui/playlistReaction/PlaylistReaction.tsx';
 import s from './PlaylistCard.module.scss';
 
-interface Props {
+interface PlaylistCardProps {
     attributes: PlaylistAttributes;
 }
-export const PlaylistCard: FC<Props> = ({ attributes }) => {
+export const PlaylistCard: FC<PlaylistCardProps> = memo(({ attributes }) => {
     return (
         <li className={s.container}>
             <PlaylistCover title={attributes.title} images={attributes.images} />
@@ -23,4 +23,4 @@ export const PlaylistCard: FC<Props> = ({ attributes }) => {
             />
         </li>
     );
-};
+});

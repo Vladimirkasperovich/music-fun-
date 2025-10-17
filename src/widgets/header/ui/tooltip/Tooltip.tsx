@@ -1,15 +1,8 @@
 import { useState } from 'react';
-import type { NavItem } from '@/shared/types';
+import { TOOLTIP_ITEMS } from '@/widgets/header/constants';
 import TooltipOpen from '@/widgets/header/assets/tooltipOpen.svg';
 import TooltipClose from '@/widgets/header/assets/tooltipClose.svg';
-import UserProfile from '@/widgets/header/assets/userProfile.svg';
-import Logout from '@/widgets/header/assets/logout.svg';
 import s from './Tooltip.module.scss';
-
-const TOOLTIP_ITEMS: NavItem[] = [
-    { id: 1, icon: UserProfile, title: 'My profile' },
-    { id: 2, icon: Logout, title: 'Logout' },
-];
 
 export const Tooltip = () => {
     const [isOpen, setIsOpen] = useState(false);

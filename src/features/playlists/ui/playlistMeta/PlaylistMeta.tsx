@@ -3,14 +3,14 @@ import Ellipse from '@/features/playlists/assets/ellipse.svg';
 import { calculateCreatedAt } from '@/features/playlists/utils/calculateCreatedAt.ts';
 import s from './PlaylistMeta.module.scss';
 
-interface Props {
+interface PlaylistMetaProps {
     title: string;
     username: string;
     createdAt: string;
     className?: string;
 }
 
-export const PlaylistMeta: FC<Props> = ({ createdAt, title, username, className }) => {
+export const PlaylistMeta: FC<PlaylistMetaProps> = ({ createdAt, title, username, className }) => {
     const playlistCreatedAt = calculateCreatedAt(createdAt);
 
     return (

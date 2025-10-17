@@ -4,32 +4,34 @@
     width: 100%;
     background: vars.$gradient-primary;
     padding: 32px;
+}
 
-    .list {
+.list {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    .item {
+        height: 30px;
+        padding: 10px 19px;
         display: flex;
         align-items: center;
-        gap: 10px;
-        .item {
-            height: 30px;
-            padding: 10px 19px;
-            display: flex;
-            align-items: center;
-            background-color: vars.$background-secondary;
-            border: 1px solid #7f7f7f;
-            border-radius: 45px;
-            font-weight: 500;
-            font-size: 12px;
-            line-height: 100%;
-        }
+        background-color: vars.$background-secondary;
+        border: 1px solid #7f7f7f;
+        border-radius: 45px;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 100%;
     }
+}
 
-    .playlistsContainer {
-        margin-top: 32px;
-        .playlistsTitle {
-            margin-bottom: 24px;
-            font-weight: 600;
-            font-size: 24px;
-            line-height: 100%;
-        }
+.playlistsContainer,
+.tracksContainer {
+    margin-top: 32px;
+    .playlistsTitle,
+    .tracksTitle {
+        margin-bottom: 24px;
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 100%;
     }
 }

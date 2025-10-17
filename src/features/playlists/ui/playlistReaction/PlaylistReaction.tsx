@@ -2,11 +2,11 @@ import type { FC } from 'react';
 import { Dislike, Like } from '@/shared/ui';
 import s from './PlaylistReaction.module.scss';
 
-interface Props {
+interface PlaylistReactionProps {
     likesCount: number;
     dislikesCount: number;
 }
-export const PlaylistReaction: FC<Props> = ({ likesCount, dislikesCount }) => {
+export const PlaylistReaction: FC<PlaylistReactionProps> = ({ likesCount, dislikesCount }) => {
     return (
         <div className={s.likesContainer}>
             <div className={s.likes}>

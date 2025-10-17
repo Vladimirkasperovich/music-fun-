@@ -1,12 +1,12 @@
-import type { FC } from 'react';
-import type { Playlist } from '@/features/playlists/types/playlists.types.ts';
+import { type FC, memo } from 'react';
+import type { Playlist } from '@/features/playlists/types';
 import { PlaylistCard } from '@/features/playlists/ui/playlistCard/PlaylistCard.tsx';
 import s from './PlaylistList.module.scss';
 
-interface Props {
+interface PlaylistListProps {
     data: Playlist[];
 }
-export const PlaylistList: FC<Props> = ({ data }) => {
+export const PlaylistList: FC<PlaylistListProps> = memo(({ data }) => {
     return (
         <ul className={s.container}>
             {data.map(({ id, attributes }) => (
@@ -14,4 +14,4 @@ export const PlaylistList: FC<Props> = ({ data }) => {
             ))}
         </ul>
     );
-};
+});

@@ -9,7 +9,7 @@ function App() {
             <aside>
                 <Sidebar />
             </aside>
-            <div className={s.content}>
+            <div>
                 <Header />
                 <main>
                     <Outlet />

@@ -6,13 +6,13 @@ import {
     UNLIKED_REACTION,
 } from '@/shared/ui/like/constants.ts';
 
-interface Props {
+interface LikeProps {
     onClick?: () => void;
     width: number;
     height: number;
 }
 
-export const Like: FC<Props> = ({ onClick, height, width }) => {
+export const Like: FC<LikeProps> = ({ onClick, height, width }) => {
     const [isLiked, setIsLiked] = useState(false);
 
     const toggleLike = () => {

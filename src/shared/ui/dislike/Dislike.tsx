@@ -6,12 +6,12 @@ import {
     UNDISLIKE_REACTION,
 } from '@/shared/ui/dislike/constants.ts';
 
-interface Props {
+interface DislikeProps {
     onClick?: () => void;
     width: number;
     height: number;
 }
-export const Dislike: FC<Props> = ({ width, height, onClick }) => {
+export const Dislike: FC<DislikeProps> = ({ width, height, onClick }) => {
     const [isDisliked, setIsDisliked] = useState(false);
     const toggleDislike = () => {
         setIsDisliked((prevState) => !prevState);
