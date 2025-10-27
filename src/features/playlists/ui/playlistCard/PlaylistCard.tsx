@@ -10,7 +10,7 @@ interface PlaylistCardProps {
 }
 export const PlaylistCard: FC<PlaylistCardProps> = memo(({ attributes }) => {
     return (
-        <li className={s.container}>
+        <li className={s.container} role="listitem" tabIndex={0}>
             <PlaylistCover title={attributes.title} images={attributes.images} />
             <PlaylistMeta
                 title={attributes.title}

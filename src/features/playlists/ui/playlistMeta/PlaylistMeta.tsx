@@ -14,17 +14,19 @@ export const PlaylistMeta: FC<PlaylistMetaProps> = ({ createdAt, title, username
     const playlistCreatedAt = calculateCreatedAt(createdAt);
 
     return (
-        <div className={className}>
-            <h2 className={s.title}>{title}</h2>
+        <section className={className} aria-labelledby="playlist-title">
+            <h2 id="playlist-title" className={s.title}>
+                {title}
+            </h2>
             <p className={s.madeFor}>
                 Made for <span className={s.username}>{username}</span>
             </p>
-            {/*Todo: need to fix hardcode*/}
+            {/*Todo: need to fix hardcode count of playlists*/}
             <p className={s.createdAt}>
-                23 Tracks
-                <Ellipse className={s.icon} />
+                <span aria-label="playlists count"> 23 Tracks</span>
+                <Ellipse className={s.icon} aria-hidden="true" />
                 {playlistCreatedAt}
             </p>
-        </div>
+        </section>
     );
 };

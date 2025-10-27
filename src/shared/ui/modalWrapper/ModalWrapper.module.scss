@@ -1,0 +1,32 @@
+@use '@/app/styles/variables' as vars;
+
+.dialog {
+    width: 376px;
+    padding: 0;
+    background: vars.$background-modal;
+    border: none;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    &::backdrop {
+        background: vars.$color-disabled;
+        opacity: 0.75;
+    }
+}
+
+.modalHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 23px 30px;
+}
+.title {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+}
+
+.icon {
+    width: 20px;
+    height: 20px;
+}

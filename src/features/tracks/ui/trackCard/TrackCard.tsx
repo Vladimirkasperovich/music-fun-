@@ -15,17 +15,19 @@ export const TrackCard: FC<TrackCardProps> = memo(({ username, images, title, li
     const src = image ? image.url : defaultCover;
 
     return (
-        <li className={s.container}>
+        <li className={s.container} role="listitem" tabIndex={0}>
             <img src={src} alt={`${title} track image`} loading="lazy" className={s.image} />
             <h2 className={s.title}>{title}</h2>
             <h3 className={s.username}>{username}</h3>
-            <div className={s.userReaction}>
+            <section className={s.userReaction}>
                 <div className={s.likeContainer}>
                     <Like width={28} height={28} />
-                    <span className={s.likesCount}>{likesCount}</span>
+                    <span className={s.likesCount} aria-label="likes count">
+                        {likesCount}
+                    </span>
                 </div>
                 <Dislike width={28} height={28} />
-            </div>
+            </section>
         </li>
     );
 });

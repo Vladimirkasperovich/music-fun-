@@ -3,7 +3,7 @@ import s from './UserProfile.module.scss';
 
 export const UserProfile = () => {
     return (
-        <div className={s.container}>
+        <section className={s.container}>
             <img
                 src="src/widgets/header/assets/userPhoto.svg"
                 alt="user icon"
@@ -11,6 +11,6 @@ export const UserProfile = () => {
             />
             <h1 className={s.username}>Dima Kuzyberdin</h1>
             <Tooltip />
-        </div>
+        </section>
     );
 };

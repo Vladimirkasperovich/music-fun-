@@ -8,7 +8,7 @@ interface TrackListProps {
 }
 export const TrackList: FC<TrackListProps> = memo(({ tracks }) => {
     return (
-        <ul className={s.container}>
+        <ul className={s.container} aria-label="new tracks" role="list">
             {tracks.map((track) => (
                 <TrackCard
                     key={track.id}

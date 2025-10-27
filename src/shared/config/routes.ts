@@ -6,3 +6,5 @@ export const Routes = {
     Tracks: '/tracks',
     User: '/user',
 } as const;
+
+export type Route = (typeof Routes)[keyof typeof Routes];

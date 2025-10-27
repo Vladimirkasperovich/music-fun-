@@ -9,8 +9,14 @@ export const Tooltip = () => {
     const toggle = () => setIsOpen((prevState) => !prevState);
 
     return (
-        <div className={s.container}>
-            <button type="button" onClick={toggle}>
+        <section className={s.container}>
+            <button
+                type="button"
+                onClick={toggle}
+                aria-haspopup="menu"
+                aria-expanded={isOpen}
+                aria-controls="profile-menu"
+            >
                 {isOpen ? (
                     <TooltipOpen className={s.arrow} />
                 ) : (
@@ -19,15 +25,15 @@ export const Tooltip = () => {
             </button>
 
             {isOpen && (
-                <ul className={s.list}>
+                <ul className={s.list} role="menu">
                     {TOOLTIP_ITEMS.map(({ id, icon: Icon, title }) => (
-                        <li key={id} className={s.item}>
-                            <Icon className={s.icon} />
+                        <li key={id} className={s.item} role="menuitem">
+                            <Icon className={s.icon} aria-label={title} />
                             <span className={s.title}>{title}</span>
                         </li>
                     ))}
                 </ul>
             )}
-        </div>
+        </section>
     );
 };

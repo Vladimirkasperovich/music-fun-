@@ -25,6 +25,7 @@ export const Like: FC<LikeProps> = ({ onClick, height, width }) => {
             <svg
                 width={width}
                 height={height}
+                aria-label="dislike"
                 viewBox="0 0 29 28"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
