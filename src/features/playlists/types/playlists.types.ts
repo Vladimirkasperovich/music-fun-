@@ -50,3 +50,9 @@ interface Meta {
     pageSize: number;
     pagesCount: number;
 }
+
+export interface SelectItem {
+    id: number;
+    title: string;
+    value: string;
+}

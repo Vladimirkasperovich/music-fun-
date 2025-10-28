@@ -1,27 +1,30 @@
-import { PlaylistList } from '@/features/playlists/ui';
-import { PLAYLIST_MOC } from '@/features/playlists/constants';
+import { PlaylistList, PlaylistSelect } from '@/features/playlists/ui';
+import { PLAYLIST_MOC, SELECT_ITEMS } from '@/features/playlists/constants';
 import { type ChangeEvent, useState } from 'react';
 import { TextField } from '@/shared/ui';
 import SearchIcon from '@/features/playlists/assets/searchIcon.svg';
+import type { SelectItem } from '@/features/playlists/types';
 import s from './Playlists.module.scss';
 
 const Playlists = () => {
     const [searchValue, setSearchValue] = useState('');
-    const onChange = (event: ChangeEvent<HTMLInputElement>) => {
-        setSearchValue(event.target.value);
-    };
+    const [selectedItem, setSelectedItem] = useState<SelectItem>(SELECT_ITEMS[0]);
+
+    const onChange = (event: ChangeEvent<HTMLInputElement>) => setSearchValue(event.target.value);
+    const onSelect = (value: SelectItem) => setSelectedItem(value);
+
     return (
         <section className={s.container}>
             <h1 className={s.allPlaylists}>All Playlists</h1>
             <div className={s.searchContainer}>
-                {/*<input type="search" className={s.search} placeholder="Search playlist" />*/}
                 <TextField
                     onChange={onChange}
                     value={searchValue}
                     placeholder="Search playlist"
                     icon={SearchIcon}
+                    size="md"
                 />
-                <span>Sort By Newest first</span>
+                <PlaylistSelect onSelect={onSelect} value={selectedItem} options={SELECT_ITEMS} />
             </div>
             <section>
                 <PlaylistList data={PLAYLIST_MOC.data} />

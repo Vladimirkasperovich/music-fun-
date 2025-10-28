@@ -8,7 +8,7 @@ export const Sidebar = () => {
         <nav className={s.container} aria-label="Main navigation">
             <ul className={s.list} role="menu">
                 {NAV_ITEMS.map(({ id, icon: Icon, title, path }, index) => (
-                    <Link key={id} to={path ? path : '#'}>
+                    <Link key={id} to={path}>
                         <li className={s.item} role="menuitem">
                             <Icon className={s.icon} aria-hidden="true" />
                             <span className={s.title}>{title}</span>

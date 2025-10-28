@@ -1,36 +1,30 @@
 import type { ChangeEvent, FC, SVGProps } from 'react';
+import { clsx } from 'clsx';
 import s from './TextField.module.scss';
 
 interface TextFieldProps {
-    label?: string;
     icon?: FC<SVGProps<SVGElement>>;
-    size?: 'md' | 'lg';
-    id?: string;
+    size: 'md' | 'lg';
     onChange: (event: ChangeEvent<HTMLInputElement>) => void;
     value: string;
-    placeholder?: string;
+    placeholder: string;
 }
 
 export const TextField: FC<TextFieldProps> = ({
-    label,
     onChange,
     value,
-    id,
     icon: Icon,
     placeholder,
     size = 'lg',
 }) => {
-    console.log(size);
     return (
-        <label htmlFor={id} className={s.container}>
-            {label}
-            {Icon && <Icon className={s.icon} />}
+        <label className={s.container}>
+            {Icon && <Icon className={s.icon} aria-hidden="true" />}
             <input
                 type="text"
                 onChange={onChange}
                 value={value}
-                id={id}
-                className={s.textField}
+                className={clsx(s.textField, s[size])}
                 placeholder={placeholder}
             />
         </label>

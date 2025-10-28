@@ -1,22 +1,42 @@
 @use '@/app/styles/variables' as vars;
 
-.arrow {
-    width: 16px;
-    height: 16px;
+.container {
+    width: 300px;
+    position: relative;
 }
-
+.selectHeader {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.sortBy {
+    font-size: 18px;
+    line-height: 100%;
+}
+.title {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 100%;
+    text-decoration: underline;
+}
+.icon {
+    width: 14px;
+    height: 14px;
+}
 .list {
     width: 136px;
     padding: 16px;
+    position: absolute;
+    top: 30px;
+    left: 50%;
     display: flex;
     flex-direction: column;
-    gap: 16px;
-    position: absolute;
-    transform: translatex(-50%) translateY(4px);
-    left: 70%;
-    top: 45px;
+    gap: 8px;
+    align-items: flex-start;
     background-color: vars.$background-primary;
+    transform: translatex(-50%) translateY(-4px);
     border: 1px solid vars.$color-white;
+    z-index: 20;
 
     max-height: 0;
     overflow: hidden;
@@ -29,10 +49,9 @@
         visibility 0s linear 0.25s;
 }
 .list.open {
-    max-height: 110px;
-    visibility: visible;
+    max-height: 300px;
     opacity: 1;
-    transform: translateX(-50%) translateY(0);
+    visibility: visible;
     transition:
         max-height 0.25s ease,
         opacity 0.25s ease,
@@ -40,15 +59,6 @@
         visibility 0s;
 }
 .item {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-.icon {
-    width: 18px;
-    height: 18px;
-}
-.title {
     font-weight: 500;
     font-size: 16px;
     line-height: 28px;

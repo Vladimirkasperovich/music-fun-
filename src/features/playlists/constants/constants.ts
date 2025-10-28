@@ -1,5 +1,9 @@
-import type { PlaylistResponse } from '@/features/playlists/types/playlists.types.ts';
+import type { PlaylistResponse, SelectItem } from '@/features/playlists/types/playlists.types.ts';
 
+export const SELECT_ITEMS: SelectItem[] = [
+    { id: 1, title: 'Newest first', value: 'addedAt' },
+    { id: 2, title: 'Likes count', value: 'likesCount' },
+];
 export const PLAYLIST_MOC: PlaylistResponse = {
     data: [
         {

@@ -5,6 +5,7 @@ export const Routes = {
     Profile: '/profile',
     Tracks: '/tracks',
     User: '/user',
+    Temporary: '#',
 } as const;
 
 export type Route = (typeof Routes)[keyof typeof Routes];
