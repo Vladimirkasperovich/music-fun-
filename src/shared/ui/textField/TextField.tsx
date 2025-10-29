@@ -26,6 +26,7 @@ export const TextField: FC<TextFieldProps> = ({
                 value={value}
                 className={clsx(s.textField, s[size])}
                 placeholder={placeholder}
+                aria-label={placeholder}
             />
         </label>
     );

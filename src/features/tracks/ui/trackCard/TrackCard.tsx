@@ -11,7 +11,7 @@ interface TrackCardProps {
     likesCount: number;
 }
 export const TrackCard: FC<TrackCardProps> = memo(({ username, images, title, likesCount }) => {
-    const image = images.find((image) => image.type === 'original');
+    const image = images.find((item) => item.type === 'original');
     const src = image ? image.url : defaultCover;
 
     return (

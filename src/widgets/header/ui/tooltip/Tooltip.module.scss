@@ -1,4 +1,4 @@
-@use '@/app/styles/variables' as vars;
+@use '@/app/styles/mixins' as vars;
 
 .arrow {
     width: 16px;
@@ -6,38 +6,10 @@
 }
 
 .list {
-    width: 136px;
-    padding: 16px;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    position: absolute;
-    transform: translatex(-50%) translateY(4px);
-    left: 70%;
-    top: 45px;
-    background-color: vars.$background-primary;
-    border: 1px solid vars.$color-white;
-
-    max-height: 0;
-    overflow: hidden;
-    opacity: 0;
-    visibility: hidden;
-    transition:
-        max-height 0.25s ease,
-        opacity 0.25s ease,
-        transform 0.25s ease,
-        visibility 0s linear 0.25s;
+    @include vars.dropdown(136px, 45px, 70%, 16px);
 }
 .list.open {
-    max-height: 110px;
-    visibility: visible;
-    opacity: 1;
-    transform: translateX(-50%) translateY(0);
-    transition:
-        max-height 0.25s ease,
-        opacity 0.25s ease,
-        transform 0.25s ease,
-        visibility 0s;
+    @include vars.dropdown-open(110px);
 }
 .item {
     display: flex;

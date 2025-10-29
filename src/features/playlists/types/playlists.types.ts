@@ -32,7 +32,7 @@ export interface PlaylistImages {
     main: PlaylistListMain[];
 }
 
-interface PlaylistListMain {
+export interface PlaylistListMain {
     type: 'original' | 'medium' | 'thumbnail';
     width: number;
     height: number;

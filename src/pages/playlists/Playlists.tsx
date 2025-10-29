@@ -1,7 +1,7 @@
 import { PlaylistList, PlaylistSelect } from '@/features/playlists/ui';
 import { PLAYLIST_MOC, SELECT_ITEMS } from '@/features/playlists/constants';
 import { type ChangeEvent, useState } from 'react';
-import { TextField } from '@/shared/ui';
+import { Hashtags, TextField } from '@/shared/ui';
 import SearchIcon from '@/features/playlists/assets/searchIcon.svg';
 import type { SelectItem } from '@/features/playlists/types';
 import s from './Playlists.module.scss';
@@ -26,6 +26,9 @@ const Playlists = () => {
                 />
                 <PlaylistSelect onSelect={onSelect} value={selectedItem} options={SELECT_ITEMS} />
             </div>
+            <section>
+                <Hashtags />
+            </section>
             <section>
                 <PlaylistList data={PLAYLIST_MOC.data} />
             </section>

@@ -1,0 +1,39 @@
+@use './variables' as vars;
+
+@mixin dropdown($width, $top, $left, $gap: 0, $align-items: flex-start) {
+    width: $width;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    transform: translatex(-50%) translateY(-4px);
+    top: $top;
+    left: $left;
+    gap: $gap;
+    align-items: $align-items;
+    background-color: vars.$background-primary;
+    border: 1px solid vars.$color-white;
+    z-index: 20;
+
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    transition:
+        max-height 0.25s ease,
+        opacity 0.25s ease,
+        transform 0.25s ease,
+        visibility 0s linear 0.25s;
+}
+
+@mixin dropdown-open($max-height) {
+    max-height: $max-height;
+    visibility: visible;
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+    transition:
+        max-height 0.25s ease,
+        opacity 0.25s ease,
+        transform 0.25s ease,
+        visibility 0s;
+}

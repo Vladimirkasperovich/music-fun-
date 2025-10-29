@@ -33,6 +33,7 @@ export const PlaylistSelect: FC<PlaylistSelectProps> = ({ options, onSelect, val
                     type="button"
                     aria-haspopup="menu"
                     aria-controls="playlist-sort"
+                    aria-label="Toggle playlist sorting options"
                 >
                     {isOpen ? (
                         <ArrowOpen className={s.icon} aria-hidden />
@@ -42,7 +43,7 @@ export const PlaylistSelect: FC<PlaylistSelectProps> = ({ options, onSelect, val
                 </button>
             </div>
 
-            <ul className={clsx(s.list, isOpen && s.open)} role="menu">
+            <ul className={clsx(s.list, isOpen && s.open)} role="menu" id="playlist-sort">
                 {options.map((item) => (
                     <li
                         key={item.id}

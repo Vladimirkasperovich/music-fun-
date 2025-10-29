@@ -1,0 +1,29 @@
+@use '@/app/styles/variables' as vars;
+
+.container {
+    max-width: 513px;
+    padding: 8px;
+    background-color: vars.$color-graphite;
+    border: 1px solid vars.$color-gray;
+    border-radius: 4px;
+}
+.header {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+.button {
+    position: absolute;
+    top: 0;
+    left: 95%;
+}
+.icon {
+    width: 24px;
+    height: 24px;
+}
+.input {
+    width: fit-content;
+    min-width: 0;
+    height: 24px;
+    border: 1px solid white;
+}

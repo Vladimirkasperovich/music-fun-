@@ -14,7 +14,7 @@ dialog {
     user-select: none;
 }
 
-//TODO: need to toggle scroll if modal open
+// need to toggle scroll if modal open
 body:has(dialog[open]) {
     overflow: hidden;
 }
