@@ -4,7 +4,7 @@ import {
     DISLIKE_COLOR_INACTIVE,
     DISLIKE_REACTION,
     UNDISLIKE_REACTION,
-} from '@/shared/ui/dislike/constants.ts';
+} from '@/shared/ui/dislike/constants/constants.ts';
 
 interface DislikeProps {
     onClick?: () => void;

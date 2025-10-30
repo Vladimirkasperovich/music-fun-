@@ -1,0 +1,55 @@
+@use '@/app/styles/variables' as vars;
+.container {
+    width: 513px;
+    padding: 8px;
+    position: relative;
+    background-color: vars.$color-graphite;
+    border: 1px solid vars.$color-gray;
+    border-radius: 4px;
+}
+.searchContainer {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.search {
+    border: 1px solid white;
+    &::placeholder {
+        color: vars.$color-gray;
+    }
+}
+.toggler {
+    position: absolute;
+    left: 95%;
+    top: 3px;
+    .icon {
+        width: 24px;
+        height: 24px;
+    }
+}
+
+.list {
+    width: 100%;
+    padding: 13px 19px;
+    position: absolute;
+    top: 45px;
+    right: 0;
+    border: 1px solid vars.$color-gray;
+    background-color: vars.$color-graphite;
+    z-index: 30;
+}
+.item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.picker {
+    width: 18px;
+    height: 18px;
+}
+.name {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 28px;
+}

@@ -1,5 +1,5 @@
-export { Like } from './like/Like';
-export { Dislike } from './dislike/Dislike';
+export { Like } from './like/ui';
+export { Dislike } from './dislike/ui';
 export { ModalWrapper } from './modalWrapper/ModalWrapper';
 export { TextField } from './textField/TextField';
-export { Hashtags } from './hashtags/Hashtags';
+export { SearchSelect } from './searchSelect/ui';

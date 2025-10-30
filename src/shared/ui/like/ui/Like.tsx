@@ -4,7 +4,7 @@ import {
     LIKE_COLOR_INACTIVE,
     LIKED_REACTION,
     UNLIKED_REACTION,
-} from '@/shared/ui/like/constants.ts';
+} from '@/shared/ui/like/constants/constants.ts';
 
 interface LikeProps {
     onClick?: () => void;
