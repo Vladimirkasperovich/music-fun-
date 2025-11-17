@@ -1,0 +1,11 @@
+@use '@/app/styles/variables' as vars;
+.list {
+    width: 100%;
+    padding: 13px 19px;
+    position: absolute;
+    top: 45px;
+    right: 0;
+    border: 1px solid vars.$color-gray;
+    background-color: vars.$color-graphite;
+    z-index: 30;
+}

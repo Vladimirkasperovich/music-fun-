@@ -1,55 +1,31 @@
-import { type ChangeEvent, useState } from 'react';
+import { memo } from 'react';
 import SelectOpen from '../../assets/selectOpen.svg';
 import SelectClose from '../../assets/selectClose.svg';
-import { SearchSelectedTag } from '@/shared/ui/searchSelect/ui';
+import { SearchSelectedTagList, SearchSelectList } from '@/shared/ui/searchSelect/ui';
 import type { NamedEntity } from '@/shared/types';
+import { useSearchSelect } from '@/shared/ui/searchSelect/hooks/useSearchSelect.ts';
 import s from './SearchSelect.module.scss';
 
 interface SearchSelectProps<T extends NamedEntity> {
     items: T[];
 }
-export const SearchSelect = <T extends NamedEntity>({ items }: SearchSelectProps<T>) => {
-    const [isOpen, setIsOpen] = useState(false);
-    const [searchValue, setSearchValue] = useState('');
-    const [selectedItems, setSelectedItems] = useState<Map<string, T>>(new Map());
-    const selectedListItems = [...selectedItems.values()];
-
-    const toggleSelect = () => setIsOpen((prevState) => !prevState);
-    const handleSearchChange = (e: ChangeEvent<HTMLInputElement>) => setSearchValue(e.target.value);
-
-    const toggleSelection = (item: T) => {
-        setSelectedItems((prevState) => {
-            const map = new Map(prevState);
-            if (map.has(item.id)) {
-                map.delete(item.id);
-            } else {
-                map.set(item.id, item);
-            }
-            return map;
-        });
-    };
-    const handleRemoveTag = (id: string) => {
-        setSelectedItems((prevState) => {
-            const map = new Map(prevState);
-            if (map.has(id)) {
-                map.delete(id);
-            }
-            return map;
-        });
-    };
+export const SearchSelect = memo(<T extends NamedEntity>({ items }: SearchSelectProps<T>) => {
+    const {
+        searchValue,
+        handleSearchChange,
+        handleRemoveTag,
+        isOpen,
+        toggleItemSelection,
+        toggleDropdown,
+        checkOutsideClickRef,
+        selectedList,
+        selectedItems,
+    } = useSearchSelect<T>();
 
     return (
-        <div className={s.container}>
+        <div className={s.container} ref={checkOutsideClickRef}>
             <div className={s.searchContainer}>
-                <ul style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                    {selectedListItems.map(({ id, name }) => (
-                        <SearchSelectedTag
-                            key={id}
-                            name={name}
-                            handleRemove={() => handleRemoveTag(id)}
-                        />
-                    ))}
-                </ul>
+                <SearchSelectedTagList handleRemove={handleRemoveTag} options={selectedList} />
 
                 <input
                     type="text"
@@ -57,11 +33,11 @@ export const SearchSelect = <T extends NamedEntity>({ items }: SearchSelectProps
                     onChange={handleSearchChange}
                     value={searchValue}
                     aria-label="search tag"
-                    placeholder="find a tag`s"
+                    disabled={selectedList.length === 5}
                 />
                 <button
                     type="button"
-                    onClick={toggleSelect}
+                    onClick={toggleDropdown}
                     className={s.toggler}
                     aria-haspopup="menu"
                     aria-expanded={isOpen}
@@ -76,20 +52,12 @@ export const SearchSelect = <T extends NamedEntity>({ items }: SearchSelectProps
                 </button>
             </div>
             {isOpen && (
-                <ul className={s.list}>
-                    {items.map((item) => (
-                        <li key={item.id} className={s.item}>
-                            <input
-                                type="checkbox"
-                                className={s.picker}
-                                onChange={() => toggleSelection(item)}
-                                checked={selectedItems.has(item.id)}
-                            />
-                            <span className={s.name}>#{item.name}</span>
-                        </li>
-                    ))}
-                </ul>
+                <SearchSelectList<T>
+                    options={items}
+                    toggleItemSelection={toggleItemSelection}
+                    selectedItems={selectedItems}
+                />
             )}
         </div>
     );
-};
+});

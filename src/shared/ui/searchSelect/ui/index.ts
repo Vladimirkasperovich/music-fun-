@@ -1,2 +1,5 @@
 export { SearchSelect } from './searchSelect/SearchSelect';
-export { SearchSelectedTag } from '@/shared/ui/searchSelect/ui/searchSelectedTag/SearchSelectedTag.tsx';
+export { SearchSelectedTagOption } from '@/shared/ui/searchSelect/ui/searchSelectedTagOption/SearchSelectedTagOption.tsx';
+export { SearchSelectList } from './searchSelectList/SearchSelectList';
+export { SearchSelectOption } from './searchSelectOption/SearchSelectOption';
+export { SearchSelectedTagList } from './searchSelectedTagList/SearchSelectedTagList';
