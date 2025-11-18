@@ -1,23 +1,19 @@
-import { useCallback, useState } from 'react';
 import { TOOLTIP_ITEMS } from '@/widgets/header/constants';
 import TooltipOpen from '@/shared/assets/icons/tooltipOpen.svg';
 import TooltipClose from '@/shared/assets/icons/tooltipClose.svg';
-import { useOutsideClick } from '@/shared/hooks';
+import { useDropdown } from '@/shared/hooks';
 import { Link } from 'react-router';
 import { clsx } from 'clsx';
 import s from './Tooltip.module.scss';
 
 export const Tooltip = () => {
-    const [isOpen, setIsOpen] = useState(false);
-    const toggle = () => setIsOpen((prevState) => !prevState);
-    const closeTooltip = useCallback(() => setIsOpen(false), []);
-    const containerRef = useOutsideClick<HTMLElement>(closeTooltip);
+    const { isOpen, toggleDropDown, outsideClickRef, closeDropdown } = useDropdown();
 
     return (
-        <section className={s.container} ref={containerRef}>
+        <section className={s.container} ref={outsideClickRef}>
             <button
                 type="button"
-                onClick={toggle}
+                onClick={toggleDropDown}
                 aria-haspopup="menu"
                 aria-expanded={isOpen}
                 aria-controls="profile-menu"
@@ -33,7 +29,7 @@ export const Tooltip = () => {
             <ul className={clsx(s.list, isOpen && s.open)} role="menu" id="profile-menu">
                 {TOOLTIP_ITEMS.map(({ id, icon: Icon, title, path }) => (
                     <li key={id} role="menuitem">
-                        <Link to={path} className={s.item} onClick={() => setIsOpen(false)}>
+                        <Link to={path} className={s.item} onClick={closeDropdown}>
                             <Icon className={s.icon} aria-label={title} />
                             <span className={s.title}>{title}</span>
                         </Link>

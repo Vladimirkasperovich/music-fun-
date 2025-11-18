@@ -13,10 +13,12 @@
     gap: 12px;
 }
 .search {
-    border: 1px solid white;
     width: 100%;
     &::placeholder {
         color: vars.$color-gray;
+    }
+    &:focus {
+        text-decoration: underline;
     }
 }
 .toggler {

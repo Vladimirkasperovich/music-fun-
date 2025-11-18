@@ -30,6 +30,7 @@ export const SearchSelect = memo(<T extends NamedEntity>({ items }: SearchSelect
                 <input
                     type="text"
                     className={s.search}
+                    ref={(ref) => ref?.focus()}
                     onChange={handleSearchChange}
                     value={searchValue}
                     aria-label="search tag"
