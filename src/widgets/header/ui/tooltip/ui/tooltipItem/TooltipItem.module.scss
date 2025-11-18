@@ -1,0 +1,14 @@
+.item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.icon {
+    width: 18px;
+    height: 18px;
+}
+.title {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 28px;
+}

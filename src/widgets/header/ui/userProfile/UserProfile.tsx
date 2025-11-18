@@ -1,4 +1,4 @@
-import { Tooltip } from '@/widgets/header/ui/tooltip/Tooltip.tsx';
+import { Tooltip } from '@/widgets/header/ui/tooltip/ui/tooltip/Tooltip.tsx';
 import s from './UserProfile.module.scss';
 
 export const UserProfile = () => {

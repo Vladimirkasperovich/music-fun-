@@ -1,9 +1,9 @@
-import { TOOLTIP_ITEMS } from '@/widgets/header/constants';
 import TooltipOpen from '@/shared/assets/icons/tooltipOpen.svg';
 import TooltipClose from '@/shared/assets/icons/tooltipClose.svg';
 import { useDropdown } from '@/shared/hooks';
-import { Link } from 'react-router';
 import { clsx } from 'clsx';
+import { TooltipList } from '@/widgets/header/ui/tooltip/ui/tooltipList/TooltipList.tsx';
+import { TOOLTIP_ITEMS } from '@/widgets/header/constants';
 import s from './Tooltip.module.scss';
 
 export const Tooltip = () => {
@@ -26,16 +26,11 @@ export const Tooltip = () => {
                 )}
             </button>
 
-            <ul className={clsx(s.list, isOpen && s.open)} role="menu" id="profile-menu">
-                {TOOLTIP_ITEMS.map(({ id, icon: Icon, title, path }) => (
-                    <li key={id} role="menuitem">
-                        <Link to={path} className={s.item} onClick={closeDropdown}>
-                            <Icon className={s.icon} aria-label={title} />
-                            <span className={s.title}>{title}</span>
-                        </Link>
-                    </li>
-                ))}
-            </ul>
+            <TooltipList
+                className={clsx(s.list, isOpen && s.open)}
+                list={TOOLTIP_ITEMS}
+                callback={closeDropdown}
+            />
         </section>
     );
 };
