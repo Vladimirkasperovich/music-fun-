@@ -8,7 +8,7 @@ interface PlaylistListProps {
 }
 export const PlaylistList: FC<PlaylistListProps> = memo(({ data }) => {
     return (
-        <ul className={s.container} aria-label="new playlists" role="list">
+        <ul className={s.container} aria-label="new playlists" role="list" id="playlist-list">
             {data.map(({ id, attributes }) => (
                 <PlaylistCard key={id} attributes={attributes} />
             ))}

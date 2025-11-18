@@ -15,7 +15,7 @@ export const SearchSelectListComponent = <T extends NamedEntity>({
     selectedItems,
 }: SearchSelectListProps<T>) => {
     return (
-        <ul className={s.list}>
+        <ul className={s.list} aria-label="search-select-list" role="list" id="search-select-list">
             {options.map((option) => (
                 <SearchSelectOption
                     key={option.id}

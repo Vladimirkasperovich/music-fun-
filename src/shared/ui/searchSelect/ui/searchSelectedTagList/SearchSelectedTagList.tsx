@@ -10,7 +10,12 @@ interface SearchSelectedTagListProps<T extends NamedEntity> {
 export const SearchSelectedTagList = memo(
     <T extends NamedEntity>({ options, handleRemove }: SearchSelectedTagListProps<T>) => {
         return (
-            <ul className={s.selectedList}>
+            <ul
+                className={s.selectedList}
+                aria-label="search tag"
+                role="tooltip"
+                id="search-tag-list"
+            >
                 {options.map(({ id, name }) => (
                     <SearchSelectedTagOption
                         key={id}

@@ -1,8 +1,8 @@
-import { type FC, useCallback, useState } from 'react';
+import { type FC } from 'react';
 import ArrowOpen from '@/shared/assets/icons/tooltipOpen.svg';
 import ArrowClose from '@/shared/assets/icons/tooltipClose.svg';
 import type { SelectItem } from '@/features/playlists/types';
-import { useOutsideClick } from '@/shared/hooks';
+import { useDropdown } from '@/shared/hooks';
 import { clsx } from 'clsx';
 import s from './PlaylistSelect.module.scss';
 
@@ -12,23 +12,21 @@ interface PlaylistSelectProps {
     value: SelectItem;
 }
 export const PlaylistSelect: FC<PlaylistSelectProps> = ({ options, onSelect, value }) => {
-    const [isOpen, setIsOpen] = useState(false);
-    const closeSelect = useCallback(() => setIsOpen(false), []);
-    const containerRef = useOutsideClick<HTMLDivElement>(closeSelect);
+    const { isOpen, closeDropdown, toggleDropDown, outsideClickRef } =
+        useDropdown<HTMLDivElement>();
 
-    const toggleSelectHandler = () => setIsOpen((prevState) => !prevState);
     const selectItemHandler = (item: SelectItem) => {
         onSelect(item);
-        closeSelect();
+        closeDropdown();
     };
 
     return (
-        <div className={s.container} ref={containerRef}>
+        <div className={s.container} ref={outsideClickRef}>
             <div className={s.selectHeader}>
                 <span className={s.sortBy}>Sort By</span>
                 <span className={s.title}>{value.title}</span>
                 <button
-                    onClick={toggleSelectHandler}
+                    onClick={toggleDropDown}
                     aria-expanded={isOpen}
                     type="button"
                     aria-haspopup="menu"
@@ -43,7 +41,12 @@ export const PlaylistSelect: FC<PlaylistSelectProps> = ({ options, onSelect, val
                 </button>
             </div>
 
-            <ul className={clsx(s.list, isOpen && s.open)} role="menu" id="playlist-sort">
+            <ul
+                className={clsx(s.list, isOpen && s.open)}
+                role="menu"
+                id="playlist-sort"
+                aria-label="playlist select"
+            >
                 {options.map((item) => (
                     <li
                         key={item.id}
