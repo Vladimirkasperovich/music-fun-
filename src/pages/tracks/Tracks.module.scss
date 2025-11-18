@@ -1,0 +1,14 @@
+@use '@/app/styles/variables' as vars;
+.trackContainer {
+    width: 100%;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    background: vars.$gradient-primary;
+}
+.tracksTitle {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 100%;
+}

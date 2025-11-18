@@ -1,24 +1,28 @@
 @use '@/app/styles/variables' as vars;
 .container {
     width: 513px;
-    padding: 8px;
+}
+.searchWrapper {
     position: relative;
-    background-color: vars.$color-graphite;
-    border: 1px solid vars.$color-gray;
-    border-radius: 4px;
+}
+.label {
+    margin-bottom: 4px;
+    font-size: 14px;
+    line-height: 24px;
 }
 .searchContainer {
     display: flex;
     align-items: center;
+    padding: 8px;
+    background-color: vars.$color-graphite;
+    border: 1px solid vars.$color-gray;
     gap: 12px;
+    border-radius: 4px;
 }
 .search {
     width: 100%;
     &::placeholder {
         color: vars.$color-gray;
-    }
-    &:focus {
-        text-decoration: underline;
     }
 }
 .toggler {
