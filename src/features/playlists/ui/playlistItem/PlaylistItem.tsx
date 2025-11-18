@@ -3,12 +3,12 @@ import type { PlaylistAttributes } from '@/features/playlists/types/playlists.ty
 import { PlaylistCover } from '@/features/playlists/ui/playlistCover/PlaylistCover.tsx';
 import { PlaylistMeta } from '@/features/playlists/ui/playlistMeta/PlaylistMeta.tsx';
 import { PlaylistReaction } from '@/features/playlists/ui/playlistReaction/PlaylistReaction.tsx';
-import s from './PlaylistCard.module.scss';
+import s from './PlaylistItem.module.scss';
 
 interface PlaylistCardProps {
     attributes: PlaylistAttributes;
 }
-export const PlaylistCard: FC<PlaylistCardProps> = memo(({ attributes }) => {
+export const PlaylistItem: FC<PlaylistCardProps> = memo(({ attributes }) => {
     return (
         <li className={s.container} role="listitem" tabIndex={0}>
             <PlaylistCover title={attributes.title} images={attributes.images} />

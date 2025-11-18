@@ -1,6 +1,6 @@
 import { type FC, memo } from 'react';
 import type { Playlist } from '@/features/playlists/types';
-import { PlaylistCard } from '@/features/playlists/ui/playlistCard/PlaylistCard.tsx';
+import { PlaylistItem } from '@/features/playlists/ui/playlistItem/PlaylistItem.tsx';
 import s from './PlaylistList.module.scss';
 
 interface PlaylistListProps {
@@ -10,7 +10,7 @@ export const PlaylistList: FC<PlaylistListProps> = memo(({ data }) => {
     return (
         <ul className={s.container} aria-label="new playlists" role="list" id="playlist-list">
             {data.map(({ id, attributes }) => (
-                <PlaylistCard key={id} attributes={attributes} />
+                <PlaylistItem key={id} attributes={attributes} />
             ))}
         </ul>
     );
