@@ -26,8 +26,12 @@ const Playlists = () => {
                 />
                 <PlaylistSelect onSelect={onSelect} value={selectedItem} options={SELECT_ITEMS} />
             </div>
-            <SearchSelect items={SEARCH_DATA} label="Hashtags" />
-            <PlaylistList data={PLAYLIST_MOC.data} />
+            <div className={s.searchSelectWrapper}>
+                <SearchSelect items={SEARCH_DATA} label="Hashtags" />
+            </div>
+            <div className={s.playlistListWrapper}>
+                <PlaylistList data={PLAYLIST_MOC.data} />
+            </div>
         </section>
     );
 };
