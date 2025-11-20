@@ -5,10 +5,23 @@
 .searchWrapper {
     position: relative;
 }
-.label {
-    margin-bottom: 4px;
-    font-size: 14px;
-    line-height: 24px;
+
+.titleContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .label {
+        margin-bottom: 4px;
+        font-size: 14px;
+        line-height: 24px;
+    }
+    .title {
+        font-weight: 500;
+        font-size: 14px;
+        .counter {
+            text-decoration: underline;
+        }
+    }
 }
 .searchContainer {
     display: flex;

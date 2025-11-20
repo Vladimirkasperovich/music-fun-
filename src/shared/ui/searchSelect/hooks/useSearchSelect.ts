@@ -1,5 +1,5 @@
 import type { NamedEntity } from '@/shared/types';
-import { type ChangeEvent, type RefObject, useCallback, useEffect, useMemo, useState } from 'react';
+import { type ChangeEvent, type RefObject, useCallback, useMemo, useState } from 'react';
 import { useOutsideClick } from '@/shared/hooks';
 
 interface UseSearchSelectReturn<T extends NamedEntity> {
@@ -32,7 +32,7 @@ export const useSearchSelect = <T extends NamedEntity>(): UseSearchSelectReturn<
             const map = new Map(prevState);
             if (map.has(item.id)) {
                 map.delete(item.id);
-            } else if (map.size < 5) {
+            } else {
                 map.set(item.id, item);
             }
             return map;
@@ -47,12 +47,6 @@ export const useSearchSelect = <T extends NamedEntity>(): UseSearchSelectReturn<
             return map;
         });
     }, []);
-
-    useEffect(() => {
-        if (selectedList.length === 5) {
-            setIsOpen(false);
-        }
-    }, [selectedList]);
 
     return {
         handleRemoveTag,
