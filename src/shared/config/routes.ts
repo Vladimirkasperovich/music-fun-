@@ -2,6 +2,7 @@
 export const Routes = {
     Home: '/',
     Playlists: '/playlists',
+    Playlist: 'playlist/:playlistId',
     Profile: '/profile',
     Tracks: '/tracks',
     User: '/user',

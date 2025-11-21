@@ -7,10 +7,11 @@ import s from './PlaylistItem.module.scss';
 
 interface PlaylistCardProps {
     attributes: PlaylistAttributes;
+    onClick: () => void;
 }
-export const PlaylistItem: FC<PlaylistCardProps> = memo(({ attributes }) => {
+export const PlaylistItem: FC<PlaylistCardProps> = memo(({ attributes, onClick }) => {
     return (
-        <li className={s.container} role="listitem" tabIndex={0}>
+        <li className={s.container} role="listitem" tabIndex={0} onClick={onClick}>
             <PlaylistCover title={attributes.title} images={attributes.images} />
             <PlaylistMeta
                 title={attributes.title}

@@ -8,6 +8,7 @@ const PlaylistsPage = lazy(() => import('@/pages/playlists/Playlists.tsx'));
 const ProfilePage = lazy(() => import('@/pages/profile/Profile.tsx'));
 const TracksPage = lazy(() => import('@/pages/tracks/Tracks.tsx'));
 const UserPage = lazy(() => import('@/pages/user/User.tsx'));
+const PlaylistPage = lazy(() => import('@/pages/playlist/Playlist.tsx'));
 
 const routes: RouteObject[] = [
     {
@@ -18,6 +19,7 @@ const routes: RouteObject[] = [
             { path: Routes.Profile, element: <ProfilePage /> },
             { path: Routes.Tracks, element: <TracksPage /> },
             { path: Routes.User, element: <UserPage /> },
+            { path: Routes.Playlist, element: <PlaylistPage /> },
         ],
     },
 ];
