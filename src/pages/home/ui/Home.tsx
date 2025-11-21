@@ -1,7 +1,7 @@
 import { PlaylistList } from '@/features/playlists/ui';
 import { PLAYLIST_MOC } from '@/features/playlists/constants';
 import { HASHTAGS } from '@/pages/home/constants/constants.ts';
-import { TrackList } from '@/features/tracks/ui';
+import { NewTrackList } from '@/features/tracks/ui';
 import { TRACKS_MOC } from '@/features/tracks/constants';
 import { ModalWrapper } from '@/shared/ui';
 import { useContext } from 'react';
@@ -37,7 +37,7 @@ const Home = () => {
                 <h1 id="tracks-title" className={s.tracksTitle}>
                     New Tracks
                 </h1>
-                <TrackList tracks={TRACKS_MOC.data} />
+                <NewTrackList tracks={TRACKS_MOC.data} />
             </section>
         </section>
     );

@@ -1,0 +1,63 @@
+@use '@/app/styles/variables' as vars;
+
+.track {
+    height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.main {
+    display: flex;
+    align-items: center;
+    gap: 23px;
+    color: vars.$color-gray;
+}
+
+.rank {
+    font-size: 22px;
+}
+
+.cover {
+    width: 52px;
+    height: 52px;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    font-size: 20px;
+    color: vars.$color-white;
+}
+
+.artist {
+    font-size: 18px;
+}
+
+.meta {
+    display: flex;
+    align-items: center;
+    gap: 142px;
+}
+
+.date {
+    font-size: 16px;
+}
+
+.controls {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.more {
+    width: 27px;
+    height: 27px;
+}
+
+.duration {
+    font-size: 16px;
+}

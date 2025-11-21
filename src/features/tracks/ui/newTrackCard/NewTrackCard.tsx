@@ -2,7 +2,7 @@ import { type FC, memo } from 'react';
 import type { TrackImageMain } from '@/features/tracks/types';
 import defaultCover from '@/shared/assets/images/default-cover.png';
 import { Dislike, Like } from '@/shared/ui';
-import s from './TrackCard.module.scss';
+import s from './NewTrackCard.module.scss';
 
 interface TrackCardProps {
     title: string;
@@ -10,7 +10,7 @@ interface TrackCardProps {
     images: TrackImageMain[];
     likesCount: number;
 }
-export const TrackCard: FC<TrackCardProps> = memo(({ username, images, title, likesCount }) => {
+export const NewTrackCard: FC<TrackCardProps> = memo(({ username, images, title, likesCount }) => {
     const image = images.find((item) => item.type === 'original');
     const src = image ? image.url : defaultCover;
 

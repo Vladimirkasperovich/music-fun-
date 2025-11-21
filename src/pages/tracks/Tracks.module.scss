@@ -1,5 +1,5 @@
 @use '@/app/styles/variables' as vars;
-.trackContainer {
+.container {
     width: 100%;
     padding: 32px;
     display: flex;
@@ -11,4 +11,18 @@
     font-weight: 600;
     font-size: 24px;
     line-height: 100%;
+}
+.hashtagContainer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 20px;
+    margin-bottom: 50px;
+}
+.hashtag {
+    width: 100%;
+}
+.artist {
+    width: 100%;
 }
