@@ -1,10 +1,8 @@
-interface Hashtag {
-    id: number;
-    title: string;
-}
-export const HASHTAGS: Hashtag[] = [
-    { id: 1, title: '#Playlists' },
-    { id: 2, title: '#Artists' },
-    { id: 3, title: '#Albums' },
-    { id: 4, title: '#Podcasts & shows' },
+import type { NamedEntity } from '@/shared/types';
+
+export const HASHTAGS: NamedEntity[] = [
+    { id: '1Zcnd', name: '#Playlists' },
+    { id: 'MbcaR2', name: '#Artists' },
+    { id: '@Mnb173U', name: '#Albums' },
+    { id: 'Lkjsn@B93', name: '#Podcasts & shows' },
 ];

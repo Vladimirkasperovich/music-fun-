@@ -6,8 +6,8 @@ import Play from '@/shared/assets/icons/play.svg';
 import More from '@/shared/assets/icons/more.svg';
 import { TrackList } from '@/features/tracks/ui';
 import { TRACKS_MOC } from '@/features/tracks/constants';
-import s from './Playlist.module.scss';
 import { PlaylistMeta } from '@/features/playlist/ui';
+import s from './Playlist.module.scss';
 
 const hashTagItems = [
     { id: 'za12CGR', name: '#Playlists' },

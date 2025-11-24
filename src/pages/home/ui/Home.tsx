@@ -7,6 +7,7 @@ import { ModalWrapper } from '@/shared/ui';
 import { useContext } from 'react';
 import { ModalContext } from '@/app/providers/modal';
 import { AuthModal } from '@/features/auth/ui';
+import { Hashtags } from '@/shared/ui/hashtags/Hashtags.tsx';
 import s from './Home.module.scss';
 
 const Home = () => {
@@ -15,13 +16,7 @@ const Home = () => {
 
     return (
         <section className={s.container}>
-            <ul className={s.list}>
-                {HASHTAGS.map(({ id, title }) => (
-                    <li key={id} className={s.item}>
-                        {title}
-                    </li>
-                ))}
-            </ul>
+            <Hashtags hashtags={HASHTAGS} />
 
             <ModalWrapper isOpen={isOpenAuthModal} onClose={closeModal} aria-label="auth window">
                 <AuthModal />

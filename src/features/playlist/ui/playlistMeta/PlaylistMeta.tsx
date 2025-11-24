@@ -1,6 +1,7 @@
-import s from './PlaylistMeta.module.scss';
 import type { NamedEntity } from '@/shared/types';
 import type { FC } from 'react';
+import { Hashtags } from '@/shared/ui/hashtags/Hashtags.tsx';
+import s from './PlaylistMeta.module.scss';
 
 interface PlaylistMetaProps {
     hashTags: NamedEntity[];
@@ -15,13 +16,7 @@ export const PlaylistMeta: FC<PlaylistMetaProps> = ({ description, title, cover,
                 <img src={cover} alt="playlist cover" className={s.image} />
             </div>
             <div className={s.playlistMeta}>
-                <ul className={s.list}>
-                    {hashTags.map(({ id, name }) => (
-                        <li key={id} className={s.item}>
-                            {name}
-                        </li>
-                    ))}
-                </ul>
+                <Hashtags hashtags={hashTags} />
                 <h1 className={s.playlistTitle}>{title}</h1>
                 <p className={s.playlistDescription}>{description}</p>
                 <span className={s.participants}>
