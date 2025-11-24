@@ -5,6 +5,7 @@ export const Routes = {
     Playlist: 'playlist/:playlistId',
     Profile: '/profile',
     Tracks: '/tracks',
+    Track: '/playlists/tracks/:trackId',
     User: '/user',
     Temporary: '#',
 } as const;
