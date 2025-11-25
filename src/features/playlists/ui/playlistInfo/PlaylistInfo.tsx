@@ -1,7 +1,7 @@
 import type { FC } from 'react';
 import Ellipse from '@/features/playlists/assets/ellipse.svg';
 import { calculateCreatedAt } from '@/features/playlists/utils/calculateCreatedAt.ts';
-import s from './PlaylistMeta.module.scss';
+import s from './PlaylistInfo.module.scss';
 
 interface PlaylistMetaProps {
     title: string;
@@ -10,7 +10,7 @@ interface PlaylistMetaProps {
     className?: string;
 }
 
-export const PlaylistMeta: FC<PlaylistMetaProps> = ({ createdAt, title, username, className }) => {
+export const PlaylistInfo: FC<PlaylistMetaProps> = ({ createdAt, title, username, className }) => {
     const playlistCreatedAt = calculateCreatedAt(createdAt);
 
     return (

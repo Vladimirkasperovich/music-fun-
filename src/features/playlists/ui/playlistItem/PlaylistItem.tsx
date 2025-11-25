@@ -1,7 +1,7 @@
 import { type FC, memo } from 'react';
 import type { PlaylistAttributes } from '@/features/playlists/types/playlists.types.ts';
 import { PlaylistCover } from '@/features/playlists/ui/playlistCover/PlaylistCover.tsx';
-import { PlaylistMeta } from '@/features/playlists/ui/playlistMeta/PlaylistMeta.tsx';
+import { PlaylistInfo } from '@/features/playlists/ui/playlistInfo/PlaylistInfo.tsx';
 import { PlaylistReaction } from '@/features/playlists/ui/playlistReaction/PlaylistReaction.tsx';
 import s from './PlaylistItem.module.scss';
 
@@ -13,7 +13,7 @@ export const PlaylistItem: FC<PlaylistCardProps> = memo(({ attributes, onClick }
     return (
         <li className={s.container} role="listitem" tabIndex={0} onClick={onClick}>
             <PlaylistCover title={attributes.title} images={attributes.images} />
-            <PlaylistMeta
+            <PlaylistInfo
                 title={attributes.title}
                 username={attributes.user.name}
                 createdAt={attributes.addedAt}

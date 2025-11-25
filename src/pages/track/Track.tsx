@@ -14,9 +14,22 @@ const HASHTAGS: NamedEntity[] = [
     { id: 'Casdw2', name: 'Albums' },
     { id: 'MTypa0', name: 'Podcasts & shows' },
 ];
+interface PlaylistWithTrack {
+    id: string;
+    title: string;
+    image: string;
+    tracksCount: number;
+}
+//TODO: need to add mock title and images
+const PLAYLISTS_WITH_TRACK: PlaylistWithTrack[] = [
+    { id: '1', title: 'Ocean Front Apt.', tracksCount: 27, image: '' },
+    { id: '2', title: 'Ocean Front Apt.', tracksCount: 27, image: '' },
+    { id: '3', title: 'Ocean Front Apt.', tracksCount: 27, image: '' },
+    { id: '4', title: 'Ocean Front Apt.', tracksCount: 27, image: '' },
+];
 const Track = () => {
-    const [searchValue, setSeachValue] = useState('');
-    const handleSearchChange = (e: ChangeEvent<HTMLInputElement>) => setSeachValue(e.target.value);
+    const [searchValue, setSearchValue] = useState('');
+    const handleSearchChange = (e: ChangeEvent<HTMLInputElement>) => setSearchValue(e.target.value);
     return (
         <section className={s.track}>
             <div className={s.wrapper}>
@@ -46,7 +59,6 @@ const Track = () => {
                     icon={Search}
                 />
             </div>
-            <ul></ul>
         </section>
     );
 };
