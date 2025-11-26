@@ -62,3 +62,33 @@
     font-size: 32px;
     margin-bottom: 18px;
 }
+.playlistList {
+}
+.playlistItem {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+.playlistImage {
+    width: 52px;
+    height: 52px;
+    border: 1px solid white;
+}
+.playlistCover {
+}
+.playlistInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+}
+.playlistTitle {
+    font-size: 20px;
+    line-height: 100%;
+}
+.playlistOwner,
+.playlistTrackCount {
+    font-size: 18px;
+    line-height: 100%;
+    color: vars.$color-gray;
+}

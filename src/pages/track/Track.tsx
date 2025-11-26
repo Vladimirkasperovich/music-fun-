@@ -17,15 +17,16 @@ const HASHTAGS: NamedEntity[] = [
 interface PlaylistWithTrack {
     id: string;
     title: string;
+    owner: string;
     image: string;
     tracksCount: number;
 }
 //TODO: need to add mock title and images
 const PLAYLISTS_WITH_TRACK: PlaylistWithTrack[] = [
-    { id: '1', title: 'Ocean Front Apt.', tracksCount: 27, image: '' },
-    { id: '2', title: 'Ocean Front Apt.', tracksCount: 27, image: '' },
-    { id: '3', title: 'Ocean Front Apt.', tracksCount: 27, image: '' },
-    { id: '4', title: 'Ocean Front Apt.', tracksCount: 27, image: '' },
+    { id: '1', title: 'Ocean Front Apt.', owner: 'Kasper', tracksCount: 27, image: '' },
+    { id: '2', title: 'Ocean Front Apt.', owner: 'Kasper', tracksCount: 27, image: '' },
+    { id: '3', title: 'Ocean Front Apt.', owner: 'Kasper', tracksCount: 27, image: '' },
+    { id: '4', title: 'Ocean Front Apt.', owner: 'Kasper', tracksCount: 27, image: '' },
 ];
 const Track = () => {
     const [searchValue, setSearchValue] = useState('');
@@ -59,6 +60,25 @@ const Track = () => {
                     icon={Search}
                 />
             </div>
+            <ul className={s.playlistList} role="list">
+                {PLAYLISTS_WITH_TRACK.map((playlist) => (
+                    <li className={s.playlistItem}>
+                        <div className={s.playlistImage}>
+                            <img
+                                src={playlist.image}
+                                alt={`cover`}
+                                className={s.playlistCover}
+                                loading="lazy"
+                            />
+                        </div>
+                        <div className={s.playlistInfo}>
+                            <span className={s.playlistTitle}>{playlist.title}</span>
+                            <span className={s.playlistOwner}>{playlist.owner}</span>
+                        </div>
+                        <span className={s.playlistTrackCount}>{playlist.tracksCount} Tracks</span>
+                    </li>
+                ))}
+            </ul>
         </section>
     );
 };
