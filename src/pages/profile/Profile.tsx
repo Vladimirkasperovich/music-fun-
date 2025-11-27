@@ -5,6 +5,7 @@ import s from './Profile.module.scss';
 const Profile = () => {
     return (
         <section className={s.profilePage}>
+            sdfdsf
             <ProfileCard
                 userImage={UserPhoto}
                 username="Dima Kuzyberdin"
