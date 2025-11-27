@@ -1,57 +1,28 @@
 import { type ChangeEvent, useState } from 'react';
-import TrackCover from '@/shared/assets/images/trackCover.png';
-import type { NamedEntity } from '@/shared/types';
-import { Hashtags } from '@/shared/ui/hashtags/Hashtags.tsx';
 import Play from '@/shared/assets/icons/play.svg';
 import More from '@/shared/assets/icons/more.svg';
 import { Dislike, Like, TextField } from '@/shared/ui';
 import Search from '@/shared/assets/icons/searchIcon.svg';
+import { PlaylistsWithTracksList, TrackPageHeader } from '@/features/track/ui';
+import { PLAYLISTS_WITH_TRACK } from '@/features/track/constants';
 import s from './Track.module.scss';
 
-const HASHTAGS: NamedEntity[] = [
-    { id: 'zxcwasd19U', name: 'Playlists' },
-    { id: '123mmans', name: 'Artists' },
-    { id: 'Casdw2', name: 'Albums' },
-    { id: 'MTypa0', name: 'Podcasts & shows' },
-];
-interface PlaylistWithTrack {
-    id: string;
-    title: string;
-    owner: string;
-    image: string;
-    tracksCount: number;
-}
-//TODO: need to add mock title and images
-const PLAYLISTS_WITH_TRACK: PlaylistWithTrack[] = [
-    { id: '1', title: 'Ocean Front Apt.', owner: 'Kasper', tracksCount: 27, image: '' },
-    { id: '2', title: 'Ocean Front Apt.', owner: 'Kasper', tracksCount: 27, image: '' },
-    { id: '3', title: 'Ocean Front Apt.', owner: 'Kasper', tracksCount: 27, image: '' },
-    { id: '4', title: 'Ocean Front Apt.', owner: 'Kasper', tracksCount: 27, image: '' },
-];
 const Track = () => {
     const [searchValue, setSearchValue] = useState('');
     const handleSearchChange = (e: ChangeEvent<HTMLInputElement>) => setSearchValue(e.target.value);
+
     return (
-        <section className={s.track}>
-            <div className={s.wrapper}>
-                <div className={s.cover}>
-                    <img src={TrackCover} alt="track cover" className={s.image} />
-                </div>
-                <div className={s.meta}>
-                    <Hashtags hashtags={HASHTAGS} />
-                    <h1 className={s.trackTitle}>1(Remastered)</h1>
-                    <span className={s.owner}>The Beatles</span>
-                    <span className={s.release}>Release date 22/02/2024</span>
-                </div>
-            </div>
-            <div className={s.reaction}>
-                <Play className={s.play} />
+        <section className={s.trackPage}>
+            <TrackPageHeader />
+            <div className={s.trackPageActions}>
+                <Play className={s.trackPageActionPlay} />
                 <Like width={40} height={40} />
                 <Dislike width={40} height={40} />
-                <More className={s.more} />
+                <More className={s.trackPageActionMore} />
             </div>
-            <div className={s.search}>
-                <h2 className={s.label}>In which playlist is the track?</h2>
+
+            <div className={s.trackPagePlaylistSearch}>
+                <h2 className={s.trackPagePlaylistSearchLabel}>In which playlist is the track?</h2>
                 <TextField
                     size="md"
                     onChange={handleSearchChange}
@@ -60,25 +31,7 @@ const Track = () => {
                     icon={Search}
                 />
             </div>
-            <ul className={s.playlistList} role="list">
-                {PLAYLISTS_WITH_TRACK.map((playlist) => (
-                    <li className={s.playlistItem}>
-                        <div className={s.playlistImage}>
-                            <img
-                                src={playlist.image}
-                                alt={`cover`}
-                                className={s.playlistCover}
-                                loading="lazy"
-                            />
-                        </div>
-                        <div className={s.playlistInfo}>
-                            <span className={s.playlistTitle}>{playlist.title}</span>
-                            <span className={s.playlistOwner}>{playlist.owner}</span>
-                        </div>
-                        <span className={s.playlistTrackCount}>{playlist.tracksCount} Tracks</span>
-                    </li>
-                ))}
-            </ul>
+            <PlaylistsWithTracksList playlists={PLAYLISTS_WITH_TRACK} />
         </section>
     );
 };
