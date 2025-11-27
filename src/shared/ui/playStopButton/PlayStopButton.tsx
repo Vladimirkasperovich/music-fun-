@@ -18,7 +18,7 @@ export const PlayStopButton: FC<PlayStopButtonProps> = ({ className }) => {
             >
                 <g filter="url(#filter0_d_24796_9103)">
                     <circle cx="52" cy="48" r="36" fill="#FF38B6" />
-                    {togglePlayer ? (
+                    {!togglePlayer ? (
                         <path
                             d="M65.2866 48.5121C66.1519 48.0263 66.1519 46.8119 65.2866 46.3262L45.8179 35.3966C44.9526 34.9108 43.871 35.518 43.871 36.4895V58.3488C43.871 59.3203 44.9526 59.9275 45.8179 59.4417L65.2866 48.5121Z"
                             fill="black"

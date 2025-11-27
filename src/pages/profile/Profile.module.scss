@@ -1,0 +1,6 @@
+@use '@/app/styles/variables' as vars;
+.profilePage {
+    width: 100%;
+    padding: 32px;
+    background: vars.$gradient-gold-deep;
+}

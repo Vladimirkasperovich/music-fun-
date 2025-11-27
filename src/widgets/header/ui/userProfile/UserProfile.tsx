@@ -1,5 +1,5 @@
 import { Tooltip } from '@/widgets/header/ui/tooltip/ui/tooltip/Tooltip.tsx';
-import userPhoto from '@/widgets/header/assets/userPhoto.png';
+import userPhoto from '@/shared/assets/images/userPhoto.png';
 import s from './UserProfile.module.scss';
 
 export const UserProfile = () => {

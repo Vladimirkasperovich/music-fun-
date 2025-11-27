@@ -1,0 +1,77 @@
+@use '@/app/styles/variables' as vars;
+.profileCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.profileAvatarWrapper {
+    width: 120px;
+    aspect-ratio: 1/1;
+}
+
+.profileAvatar {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.profileInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+}
+.profileName {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 28px;
+}
+
+.profileEditButton {
+    width: 128px;
+    height: 40px;
+    background: #2c2c2c;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    &:hover {
+        background: #343434;
+    }
+    &:active {
+        background: #222;
+    }
+}
+.editIcon {
+    width: 24px;
+    height: 24px;
+}
+.profileStats {
+    display: flex;
+    align-items: center;
+    gap: 23px;
+}
+
+.profileStatItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profileStatValue {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1;
+    margin-bottom: 4px;
+}
+
+.profileStatLabel {
+    font-weight: 500;
+    font-size: 10px;
+    color: vars.$color-gray;
+}
