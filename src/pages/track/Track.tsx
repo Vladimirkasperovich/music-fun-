@@ -1,7 +1,6 @@
 import { type ChangeEvent, useState } from 'react';
-import Play from '@/shared/assets/icons/play.svg';
 import More from '@/shared/assets/icons/more.svg';
-import { Dislike, Like, TextField } from '@/shared/ui';
+import { Dislike, Like, PlayStopButton, TextField } from '@/shared/ui';
 import Search from '@/shared/assets/icons/searchIcon.svg';
 import { PlaylistsWithTracksList, TrackPageHeader } from '@/features/track/ui';
 import { PLAYLISTS_WITH_TRACK } from '@/features/track/constants';
@@ -15,7 +14,7 @@ const Track = () => {
         <section className={s.trackPage}>
             <TrackPageHeader />
             <div className={s.trackPageActions}>
-                <Play className={s.trackPageActionPlay} />
+                <PlayStopButton className={s.trackPageActionPlay} />
                 <Like width={40} height={40} />
                 <Dislike width={40} height={40} />
                 <More className={s.trackPageActionMore} />

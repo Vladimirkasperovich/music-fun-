@@ -1,8 +1,7 @@
 import playlistCover from '@/shared/assets/images/playlistCover.png';
-import { Dislike, Like, TextField } from '@/shared/ui';
+import { Dislike, Like, PlayStopButton, TextField } from '@/shared/ui';
 import { type ChangeEvent, useState } from 'react';
 import SearchIcon from '@/shared/assets/icons/searchIcon.svg';
-import Play from '@/shared/assets/icons/play.svg';
 import More from '@/shared/assets/icons/more.svg';
 import { TrackList } from '@/features/tracks/ui';
 import { TRACKS_MOC } from '@/features/tracks/constants';
@@ -37,9 +36,7 @@ const Playlist = () => {
                         placeholder="Search playlist"
                         icon={SearchIcon}
                     />
-                    <button className={s.playButton}>
-                        <Play className={s.playIcon} />
-                    </button>
+                    <PlayStopButton className={s.playButton} />
                     <Like width={40} height={40} />
                     <Dislike width={40} height={40} />
                     <button className={s.moreButton}>
